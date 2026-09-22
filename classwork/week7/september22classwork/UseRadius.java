@@ -44,6 +44,6 @@ public class UseRadius{
     //use parameters to calculate the volume of cylinder then print it out
     public void printVol(double radius, double height){
         double vol = this.pi * radius * radius * height;
-        System.out.println("The volume of the cylinder is " + volume + ".");
+        System.out.println("The volume of the cylinder is " + vol + ".");
     }
 }
