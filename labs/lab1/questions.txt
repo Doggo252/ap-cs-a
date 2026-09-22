@@ -1,0 +1,161 @@
+Orbital Mechanics (9 Math Questions Total)
+6 Easy Calculations: 
+    1. Space Station Speed
+    The International Space Station completes 16 orbits around
+    Earth every 24 hours. How many hours does it take to complete
+    just 1 orbit? Express your answer as a decimal.
+
+    Answer: 1.5
+
+    2. Satellite Travel Distance
+    A weather satellite orbits Earth in a circular path with
+    a radius of 7,000 km from the Earth's center. Using the
+    formula C = 2 * pi * r and approximating pi at 3.14,
+    what is the total distance the satellite travels in one full orbit?
+
+    Answer: 43960
+
+    3. Rover Signal Delay
+    Radio signals traveling from a Mars orbiter to Earth
+    travel at 300,000 km/s. If Mars is currently 150,000,000 km
+    away from Earth, how many seconds does it take for a signal
+    to reach Earth? Convert your answer to minutes.
+
+    8.33
+
+    4. Lunar Module Fuel Consumption
+    A lunar lander uses 45 kg of fuel for every 3 minutes
+    of thruster burns during an orbit adjustment. At this
+    rate, how many kilograms of fuel will it burn during a
+    12-minute maneuver?
+
+    180
+
+    5. Gravity Ratio
+    An astronaut weighs 180 lbs on Earth. Due to weaker gravity,
+    a person's weight on the Moon is about 1/6 of their weight
+    on Earth. How much would the astronaut weigh on the Moon?
+
+    30
+
+    6. Probe Velocity Adjustment
+    A deep-space probe is traveling at 12,400 m/s. Flight controllers
+    fire its engines to increase its speed by 15%. What is the probe's
+    new speed in meters per second?
+
+    14260
+
+3 Hard Calculations:
+    1. Transfer Orbit Timing
+    A spacecraft enters a transfer orbit to move from a lower orbit to
+    a higher orbit. The entire elliptical transfer path takes 14 hours
+    to complete a full loop. However, the spacecraft only needs to travel
+    along half of the loop to reach the target orbit. Once it arrives, it
+    must perform a 25-minute engine burn to lock into place. What is the
+    total time in minutes from the start of the transfer to the end of the
+    engine burn?
+
+    445
+
+    2. Scale Model Rocket
+    Engineers are building a scale model of an orbital launch vehicle.
+    The real rocket stands 70 meters tall and has a main engine nozzle
+    diameter of 2.8 meters. If the scale model is built so that its height
+    is 35 centimeters, what should the diameter of the model's engine nozzle
+    be in centimeters?
+
+    1.4
+
+    3. Orbital Decay Loss
+    A satellite in low Earth orbit experiences atmospheric drag, causing
+    its altitude to decrease by 1.5 km every week.
+    
+    Part A: If the satellite starts at an altitude of 400 km, what will
+            its altitude be after 8 weeks?
+            388km
+            
+    Part B: If ground control fires the boosters to raise the altitude
+    back up by 20% from its new 8-week altitude, what is the final altitude?
+        465.6
+
+Alien Trivia (9 Multiple Choice Questions Total):
+6 Easy Questions: 
+    What shape are flying saucers usually drawn or described as in popular
+    alien lore?
+    A. Square
+    B. Disc or saucer
+    C. Triangle
+    D. Pyramid
+
+    Answer: B
+
+    What color skin is most commonly given to classic "little green men" in
+    cartoons and comic books?
+    A. Blue
+    B. Green
+    C. Purple
+    D. Orange
+
+    Answer: B
+
+    Which planet in our solar system is nicknamed the "Red Planet" and is the
+    most common home for aliens in classic sci-fi stories?
+    A. Venus
+    B. Mars
+    C. Jupiter
+    D. Saturn
+
+    Answer: B
+
+    What do the initials "UFO" stand for?
+    A. Universal Flying Object
+    B. Unknown Floating Craft
+    C. Unidentified Flying Object
+    D. Undercover Flying Orb
+
+    Answer: C
+
+    What giant gas planet in our solar system has large rings surrounding it?
+    A. Mars
+    B. Mercury
+    C. Saturn
+    D. Earth
+
+    Answer: C
+
+    What do scientists call a giant rock traveling through space that burns up
+    when entering Earth's atmosphere, often called a "shooting star"?
+    A. Meteor
+    B. Black hole
+    C. Galaxy
+    D. Nebula
+
+    Answer: A
+
+3 Hard Questions:
+    What color is the sun actually considered to be by astronomers, even though
+    it looks yellow to us from Earth's surface?
+    A. Blue
+    B. Red
+    C. White
+    D. Green
+
+    Answer: C
+
+    What is the name of our home galaxy that contains Earth, our sun, and
+    billions of other stars?
+    A. Andromeda
+    B. The Milky Way
+    C. The Whirlpool
+    D. Sombrero
+
+    Answer: B
+
+    In space, what happens to sound waves because there is no air or atmosphere
+    for them to travel through?
+    A. They travel twice as fast
+    B. They become very high-pitched
+    C. They cannot travel at all (total silence)
+    D. They turn into light waves
+
+    Answer: C
