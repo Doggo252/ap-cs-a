@@ -19,10 +19,13 @@ public class Runner {
         Runner runner = new Runner();
         //ask the user for time of day and season
         Scanner sc = new Scanner(System.in);
-        System.out.print("Welcome to my scenery picture.\nWould you like a day or night scene?: ");
+        /*System.out.print("Welcome to my scenery picture.\nWould you like a day or night scene?: ");
         String timeOfDay = sc.next();
         System.out.print("Pick a season from fall, spring, or winter: ");
-        String season = sc.next();
+        String season = sc.next();*/
+        String timeOfDay = "day";
+        String season = "spring";
+        
         if (timeOfDay.equalsIgnoreCase("day")){
             if(season.equalsIgnoreCase("winter")){
                 runner.createWindow("Scenery: winter, daytime", timeOfDay, season);
@@ -55,5 +58,7 @@ public class Runner {
         else{
             System.out.println("Bad input.");
         }
+
+        sc.close();
     }
 }
