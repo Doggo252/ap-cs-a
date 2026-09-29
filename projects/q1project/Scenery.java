@@ -6,7 +6,7 @@ public class Scenery extends JPanel {
 	//instance variables
 	private String timeOfDay;
 	private String season;
-	private Color red, orange, yellow, green, blue, purple, grey, black, brown, white;
+	private Color black, white;
 	
 
 	public Scenery(String timeOfDay, String season) {
@@ -16,15 +16,7 @@ public class Scenery extends JPanel {
         // add any initialization code to the constructor
 		this.timeOfDay = timeOfDay;
 		this.season = season;
-		red = new Color(255,0,0);
-		orange = new Color(255,165,0);
-		yellow = new Color(255,255,0);
-		green = new Color(60, 179, 113);
-		blue = new Color(0,0,255);
-		purple = new Color(128,0,128);
-		grey = new Color(128,128,128);
 		black = new Color(0,0,0);
-		brown = new Color(150, 75, 0);
 		white = new Color(255,255,255);
 	}
 
@@ -139,10 +131,10 @@ public class Scenery extends JPanel {
 				drawTriangle(g, 525, 350, 700, 200, 850, 350, new Color(125, 135, 160));
 				drawQuad(g, 700, 200, 680, 220, 700, 230 ,720, 220, white);
 			}
-			else{
+			else{ //winter
 				g.setColor(new Color(186, 222, 241));
 				g.fillRect(0,0, 800, 350);
-				g.setColor(yellow);
+				//g.setColor(yellow);
 				g.fillOval(-100, -100, 175, 175);
 			}
 			
@@ -159,7 +151,7 @@ public class Scenery extends JPanel {
 				g.setColor(new Color(246, 241, 213));
 				g.fillOval(-100, -100, 175, 175);
 			}
-			else{
+			else{ //winter
 				g.setColor(new Color(5, 10, 26));
 				g.fillRect(0,0, 800, 350);
 				g.setColor(new Color(246, 241, 213));
@@ -280,6 +272,23 @@ public class Scenery extends JPanel {
         g.fillPolygon(xArray, yArray, 4);
     }
 
+	//quad outline
+	private void outlineQuad(Graphics2D g2d, int thickness, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, Color color){
+		int[] xArray = new int[4];
+        int[] yArray = new int[4];
+        xArray[0] = x1;
+        xArray[1] = x2;
+        xArray[2] = x3;
+		xArray[3] = x4;
+        yArray[0] = y1;
+        yArray[1] = y2;
+        yArray[2] = y3;
+		yArray[3] = y4;
+        g2d.setColor(color);
+		g2d.setStroke(new BasicStroke(thickness));
+        g2d.drawPolygon(xArray, yArray, 4);
+	}
+
 	//draw a house (no params)
 	private void drawHouse(Graphics g, Graphics2D g2d){
 		//house rect
@@ -346,7 +355,9 @@ public class Scenery extends JPanel {
 		drawRect(g, x+23, y-10, 5, 10, new Color(80, 110, 40));
 	}
 
+	//draws the barn for fall season
 	private void drawBarn(Graphics g, Graphics2D g2d, int x, int y){
+		outlineQuad(g2d, 25, x, y+73, x+230, y+73, x+180, y+20, x+50, y+20, new Color(85, 35, 30));
 		drawRect(g, x, y+75, 230, 180, new Color(170, 40, 40));
 		drawQuad(g, x, y+73, x+230, y+73, x+180, y+20, x+50, y+20, new Color(170, 40, 40));
 		drawRect(g, x, y+73, 230, 4, new Color(85, 35, 30));
@@ -358,5 +369,6 @@ public class Scenery extends JPanel {
 		drawLine(g2d, 4, x+164, y+151, x+66, y+254, white);
 		drawWindow(g, x+20, y+100, 0.8, new Color(60, 45, 40));
 		drawWindow(g, x+170, y+100, 0.8, new Color(60, 45, 40));
+		drawWindow(g, x+100, y+25, 0.8, new Color(60, 45, 40));
 	}
 }
