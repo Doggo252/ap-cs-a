@@ -58,17 +58,32 @@ public class Scenery extends JPanel {
 			drawFlower(g, 425, 525, new Color(150, 90, 200), new Color(255, 220, 0),1.5);
 			drawButterfly(g, g2d, 100, 475, 0.75);
 			drawBunny(g, 350, 500, 1);
+			//house
+			drawHouse(g, g2d);
 		}
-		
-		if (season.equalsIgnoreCase("fall")){
-			//drawTree(g, 40, 200, new Color(235, 175, 40));
-			//drawTree(g, 600, 200, new Color(180, 40, 30));
-			//drawTree(g, 450, 350, new Color(215, 95, 30));
+		else if (timeOfDay.equalsIgnoreCase("day") && season.equalsIgnoreCase("fall")){
+			//fence
+			drawRect(g, 0, 360, 800, 10, new Color(225, 205,170));
+			drawRect(g, 0, 390, 800, 10, new Color(225, 205,170));
+			//down thingies
+			for (int i = 5; i<=810; i+=60){
+				drawRect(g, i, 345, 10, 70, new Color(225, 205,170));
+			}
+			//trees
+			drawTree(g, 380, 300, new Color(240, 130, 30), new Color(205, 85, 25), new Color(100, 65, 35), 0.8);
+			drawTree(g, 480, 300, new Color(240, 130, 30), new Color(205, 85, 25), new Color(100, 65, 35), 1);
+			drawTree(g, 680, 270, new Color(240, 130, 30), new Color(205, 85, 25), new Color(100, 65, 35), 1.1);
+			//flowers
+			drawFlower(g, 100, 520, new Color(255, 200, 0), new Color(100, 60, 20), 1.5);
+			drawFlower(g, 500, 515, new Color(255, 200, 0), new Color(100, 60, 20), 1.5);
+			drawFlower(g, 150, 520, new Color(200, 60, 90), new Color(100, 60, 20), 1.25);
+			drawFlower(g, 550, 520, new Color(200, 60, 90), new Color(100, 60, 20), 1.25);
+			//pumpkins
+			drawPumpkin(g, 25, 550);
+			drawPumpkin(g, 450, 550);
+			//barn
+			drawBarn(g, g2d, 75,200);
 		}
-		drawHouse(g, g2d);
-		
-		
-		
 	}
 
 	private void drawBackground(Graphics g, Graphics2D g2d) { 
@@ -104,14 +119,25 @@ public class Scenery extends JPanel {
 				drawCloud(g2d, 0.67, 450, 125);
 			}
 			else if (season.equalsIgnoreCase("fall")){
-				g.setColor(new Color(83, 145, 178));
-				g.fillRect(0,0, 800, 350);
-				g.setColor(new Color(90, 155, 185));
-				g.fillRect(0,120, 800, 350);
-				g.setColor(new Color(107, 171, 199));
-				g.fillRect(0,240, 800, 350);
-				g.setColor(new Color(135, 90, 50));
-				g.fillRect(0,350, 800, 250);
+				//sky
+				drawRect(g, 0, 0, 800, 350, new Color(135, 206, 235));
+				//ground
+				drawRect(g, 0, 350, 800, 250, new Color(150, 105, 65));
+				//clouds
+				drawCloud(g, 1, 300, 50);
+				drawCloud(g, 0.75, 600, 100);
+				//sun
+				drawOval(g, 50, 50, 75, 75, new Color(255, 200, 70));
+				//mountains
+				drawTriangle(g, 200, 150, -20, 350, 420, 350, new Color(125, 135, 160));
+				drawTriangle(g, 200, 150, 300, 350, 420, 350, new Color(100, 110, 135));
+				drawTriangle(g, 200, 150, 153, 190, 247, 190, white);
+				drawTriangle(g, 400, 150, 525, 350, 200, 350, new Color(125, 135, 160));
+				drawTriangle(g, 400, 150, 525, 350, 600, 300, new Color(100, 110, 135));
+				drawQuad(g, 400, 145, 355, 200, 390, 200, 435, 173, white);
+				drawQuad(g, 435, 173, 415, 180, 430, 200, 455, 190, white);
+				drawTriangle(g, 525, 350, 700, 200, 850, 350, new Color(125, 135, 160));
+				drawQuad(g, 700, 200, 680, 220, 700, 230 ,720, 220, white);
 			}
 			else{
 				g.setColor(new Color(186, 222, 241));
@@ -211,17 +237,17 @@ public class Scenery extends JPanel {
 	}
 
 	//draws a window given position and scale
-	private void drawWindow(Graphics g, int x, int y, double scale){
+	private void drawWindow(Graphics g, int x, int y, double scale, Color glassColor){
 		//white bg
 		drawRect(g, x, y, (int) (51 * scale), (int) (51 * scale), white);
 		//top left
-		drawRect(g, (int) (x+(4 * scale)), (int) (y+(4 * scale)), (int) (20 * scale), (int) (20 * scale), new Color(173, 216, 230));
+		drawRect(g, (int) (x+(4 * scale)), (int) (y+(4 * scale)), (int) (20 * scale), (int) (20 * scale), glassColor);
 		//top right
-		drawRect(g, (int) (x+(27 * scale)), (int) (y+(4 * scale)), (int) (20 * scale), (int) (20 * scale), new Color(173, 216, 230));
+		drawRect(g, (int) (x+(27 * scale)), (int) (y+(4 * scale)), (int) (20 * scale), (int) (20 * scale), glassColor);
 		//bottom left
-		drawRect(g, (int) (x+(4 * scale)), (int) (y+(27 * scale)), (int) (20 * scale), (int) (20 * scale), new Color(173, 216, 230));
+		drawRect(g, (int) (x+(4 * scale)), (int) (y+(27 * scale)), (int) (20 * scale), (int) (20 * scale), glassColor);
 		//bottom right
-		drawRect(g, (int) (x+(27 * scale)), (int) (y+(27 * scale)), (int) (20 * scale), (int) (20 * scale), new Color(173, 216, 230));
+		drawRect(g, (int) (x+(27 * scale)), (int) (y+(27 * scale)), (int) (20 * scale), (int) (20 * scale), glassColor);
 	}
 
 	//draws a triangle given 3 points and color
@@ -263,8 +289,8 @@ public class Scenery extends JPanel {
 		//doorknob
 		drawOval(g, 215, 367, 5, 5, new Color(255, 215, 0));
 		//windows
-		drawWindow(g, 115, 295, 0.8);
-		drawWindow(g, 240, 325, 0.8);
+		drawWindow(g, 115, 295, 0.8, new Color(173, 216, 230));
+		drawWindow(g, 240, 325, 0.8, new Color(173, 216, 230));
 		//chimney
 		drawRect(g, 250, 200, 25, 50, new Color(160, 82, 45));
 		//roof
@@ -312,5 +338,25 @@ public class Scenery extends JPanel {
 		drawOval(g, x+58, y-10, 8, 30, bunny);
 		//left ear
 		drawOval(g, x+45, y-10, 8, 30, bunny);
+	}
+
+	private void drawPumpkin(Graphics g, int x, int y){
+		drawOval(g, x, y, 50, 40, new Color(240, 120, 20));
+		drawRect(g, x+25, y, 2, 40, new Color(205, 85, 25));
+		drawRect(g, x+23, y-10, 5, 10, new Color(80, 110, 40));
+	}
+
+	private void drawBarn(Graphics g, Graphics2D g2d, int x, int y){
+		drawRect(g, x, y+75, 230, 180, new Color(170, 40, 40));
+		drawQuad(g, x, y+73, x+230, y+73, x+180, y+20, x+50, y+20, new Color(170, 40, 40));
+		drawRect(g, x, y+73, 230, 4, new Color(85, 35, 30));
+		drawRect(g, x+115, y+150, 3, 105, white);
+		drawRect(g, x+65, y+150, 5, 105, white);
+		drawRect(g, x+165, y+150, 5, 105, white);
+		drawRect(g, x+65, y+150, 100, 5, white);
+		drawLine(g2d, 4, x+66, y+151, x+164, y+254, white);
+		drawLine(g2d, 4, x+164, y+151, x+66, y+254, white);
+		drawWindow(g, x+20, y+100, 0.8, new Color(60, 45, 40));
+		drawWindow(g, x+170, y+100, 0.8, new Color(60, 45, 40));
 	}
 }
