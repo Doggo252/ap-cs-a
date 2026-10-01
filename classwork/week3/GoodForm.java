@@ -15,6 +15,6 @@ public class GoodForm { //change class and file name to GoodForm
         double pi = 3.14; //change cow variable name to pi
         double area = pi * radius * radius; //change dog variable name to area
         System.out.println("The area of this circle is " + area); 
-        keyBoard.close() //close the scanner
+        keyBoard.close(); //close the scanner
     }
 }

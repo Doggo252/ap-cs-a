@@ -1,6 +1,7 @@
 // The following 4 imports allow you to draw on a JPanel
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Scenery extends JPanel {	
 	//instance variables
@@ -9,7 +10,7 @@ public class Scenery extends JPanel {
 	private Color black, white;
 	
 
-	public Scenery(String timeOfDay, String season) {
+	public Scenery(JFrame frame, String timeOfDay, String season) {
         setFocusable(true); // make sure focus is in this JPanel. This will become more important when we start using buttons.
         setLayout(null);    // setting to null allows you to control the layout of the JPanel.
         
@@ -18,7 +19,17 @@ public class Scenery extends JPanel {
 		this.season = season;
 		black = new Color(0,0,0);
 		white = new Color(255,255,255);
+
+		//mouse coordinates
+		addMouseMotionListener(new MouseMotionAdapter() {
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            // Update the window title with the live X and Y coordinates
+            frame.setTitle("Current Coordinates -> X: " + e.getX() + ", Y: " + e.getY());
+        }
+    	});
 	}
+	
 
 	@Override
 	public Dimension getPreferredSize() {
@@ -75,6 +86,13 @@ public class Scenery extends JPanel {
 			drawPumpkin(g, 450, 550);
 			//barn
 			drawBarn(g, g2d, 75,200);
+			//fox
+			drawFox(g, 600, 450);
+			//squirrel
+			drawSquirrel(g, 350, 500);
+		}
+		else if (timeOfDay.equalsIgnoreCase("day") && season.equalsIgnoreCase("winter")){
+
 		}
 	}
 
@@ -370,5 +388,33 @@ public class Scenery extends JPanel {
 		drawWindow(g, x+20, y+100, 0.8, new Color(60, 45, 40));
 		drawWindow(g, x+170, y+100, 0.8, new Color(60, 45, 40));
 		drawWindow(g, x+100, y+25, 0.8, new Color(60, 45, 40));
+	}
+
+	private void drawFox(Graphics g, int x, int y){
+		Color fox = new Color(225, 110, 40);
+		drawOval(g, x+5, y+5, 60, 30, fox);
+		drawOval(g, x+52, y-12, 25, 25, fox);
+		drawOval(g, x+65, y-5, 5, 5, black);
+		drawTriangle(g, x+10, y+15, x-20, y, x-10, y+30, fox);
+		drawTriangle(g, x-20, y, x-10, y+30, x-25, y+15, white);
+		drawTriangle(g, x+72, y+8, x+86, y+4, x+72, y-4, fox);
+		drawTriangle(g, x+72, y+8, x+86, y+4, x+72, y-4, fox);
+		drawTriangle(g, x+58, y-7, x+58, y-22, x+64, y-11, fox);
+		drawTriangle(g, x+72, y-7, x+72, y-22, x+66, y-11, fox);
+	}
+
+	private void drawSquirrel(Graphics g, int x, int y){
+		//squirrel color
+		Color squirrel = new Color(135, 135, 140);
+		//tail
+		drawOval(g, x+5, y, 35, 70, squirrel);
+		//body
+		drawOval(g, x+30, y+30, 40, 40, squirrel);
+		//head
+		drawOval(g, x+60, y+14, 30, 30, squirrel);
+		//eye
+		drawOval(g, x+78, y+21, 6,6, black);
+		//head top thingy
+		drawTriangle(g, x+65, y+22, x+81, y+19, x+70, y+4, squirrel);
 	}
 }

@@ -7,7 +7,7 @@ public class Runner {
         // Create the frame object. Give it a title appropriate to the application
         JFrame frame = new JFrame(name);
         //Create the JPanel object and add it to the frame
-        Scenery canvas = new Scenery(timeOfDay, season);
+        Scenery canvas = new Scenery(frame, timeOfDay, season);
         frame.add(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
