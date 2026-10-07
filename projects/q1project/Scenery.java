@@ -95,18 +95,6 @@ public class Scenery extends JPanel {
 
 	private void drawBackground(Graphics g, Graphics2D g2d) {
 		if (season.equalsIgnoreCase("spring")) {
-			// far hill right
-			drawOval(g, 250, 290, 800, 400, new Color(120, 190, 110));
-			// far hill left
-			drawOval(g, -250, 300, 800, 400, new Color(120, 190, 110));
-			// close hill
-			drawOval(g, 0, 315, 850, 450, new Color(95, 170, 85));
-			// ground
-			drawRect(g, 0, 400, 800, 200, new Color(100, 185, 80));
-			// clouds
-			drawCloud(g2d, 1, 100, 100);
-			drawCloud(g2d, 0.67, 450, 125);
-
 			if (timeOfDay.equalsIgnoreCase("day")) {
 				// sky
 				drawRect(g, 0, 0, 800, 400, new Color(135, 206, 235));
@@ -125,19 +113,40 @@ public class Scenery extends JPanel {
 				drawLine(g2d, 3, 650, 60, 627, 48, new Color(255, 215, 60)); // 10 o'clock
 				drawLine(g2d, 3, 650, 120, 627, 132, new Color(255, 215, 60)); // 8 o'clock
 				drawLine(g2d, 3, 670, 143, 655, 164, new Color(255, 215, 60)); // 7 o'clock
+				// clouds
+				drawCloud(g2d, 1, 100, 100);
+				drawCloud(g2d, 0.67, 450, 125);
 			} else {
 				// sky
 				drawRect(g, 0, 0, 800, 400, new Color(20, 30, 80));
 				// moon
 				drawOval(g, 650, 40, 100, 100, new Color(245, 245, 210));
 			}
-
+			// far hill right
+			drawOval(g, 250, 290, 800, 400, new Color(120, 190, 110));
+			// far hill left
+			drawOval(g, -250, 300, 800, 400, new Color(120, 190, 110));
+			// close hill
+			drawOval(g, 0, 315, 850, 450, new Color(95, 170, 85));
+			// ground
+			drawRect(g, 0, 400, 800, 200, new Color(100, 185, 80));
 		} else if (season.equalsIgnoreCase("fall")) {
+			if (timeOfDay.equalsIgnoreCase("day")) {
+				// sky
+				drawRect(g, 0, 0, 800, 350, new Color(135, 206, 235));
+				// sun
+				drawOval(g, 50, 50, 75, 75, new Color(255, 200, 70));
+				// clouds
+				drawCloud(g, 1, 300, 50);
+				drawCloud(g, 0.75, 600, 100);
+			} else {
+				// sky
+				drawRect(g, 0, 0, 800, 350, new Color(15, 20, 60));
+				// moon
+				drawOval(g, 50, 50, 75, 75, new Color(250, 240, 200));
+			}
 			// ground
 			drawRect(g, 0, 350, 800, 250, new Color(150, 105, 65));
-			// clouds
-			drawCloud(g, 1, 300, 50);
-			drawCloud(g, 0.75, 600, 100);
 			// mountains
 			drawTriangle(g, 200, 150, -20, 350, 420, 350, new Color(125, 135, 160));
 			drawTriangle(g, 200, 150, 300, 350, 420, 350, new Color(100, 110, 135));
@@ -148,44 +157,33 @@ public class Scenery extends JPanel {
 			drawQuad(g, 435, 173, 415, 180, 430, 200, 455, 190, white);
 			drawTriangle(g, 525, 350, 700, 200, 850, 350, new Color(125, 135, 160));
 			drawQuad(g, 700, 200, 680, 220, 700, 230, 720, 220, white);
-			if (timeOfDay.equalsIgnoreCase("day")) {
-				// sky
-				drawRect(g, 0, 0, 800, 350, new Color(135, 206, 235));
-				// sun
-				drawOval(g, 50, 50, 75, 75, new Color(255, 200, 70));
-			} else {
-				// sky
-				drawRect(g, 0, 0, 800, 350, new Color(15, 20, 60));
-				// moon
-				drawOval(g, 50, 50, 75, 75, new Color(250, 240, 200));
-			}
+			
 		} else { // winter
-					// hills
-					// far hill right
-			drawOval(g, 250, 270, 800, 400, new Color(225, 235, 248));
-			// far hill left
-			drawOval(g, -250, 280, 800, 400, new Color(225, 235, 248));
-			// ground
-			drawRect(g, 0, 350, 800, 250, new Color(248, 250, 255));
-			// clouds
-			drawCloud(g, 1, 100, 100);
-			drawCloud(g, 0.75, 400, 75);
-			// ice
-			drawOval(g, 50, 450, 300, 100, new Color(185, 220, 240));
-			drawRect(g, 125, 475, 50, 4, new Color(235, 245, 255));
-			drawRect(g, 235, 525, 50, 4, new Color(235, 245, 255));
-
 			if (timeOfDay.equalsIgnoreCase("day")) {
 				// sky
 				drawRect(g, 0, 0, 800, 350, new Color(160, 210, 240));
 				// sun
 				drawOval(g, 650, 50, 75, 75, new Color(255, 235, 150));
+				// clouds
+				drawCloud(g, 1, 100, 100);
+				drawCloud(g, 0.75, 400, 75);
 			} else {
 				// sky
 				drawRect(g, 0, 0, 800, 350, new Color(10, 20, 55));
 				// moon
 				drawOval(g, 650, 50, 75, 75, new Color(240, 245, 255));
 			}
+			// hills
+			// far hill right
+			drawOval(g, 250, 270, 800, 400, new Color(225, 235, 248));
+			// far hill left
+			drawOval(g, -250, 280, 800, 400, new Color(225, 235, 248));
+			// ground
+			drawRect(g, 0, 350, 800, 250, new Color(248, 250, 255));
+			// ice
+			drawOval(g, 50, 450, 300, 100, new Color(185, 220, 240));
+			drawRect(g, 125, 475, 50, 4, new Color(235, 245, 255));
+			drawRect(g, 235, 525, 50, 4, new Color(235, 245, 255));
 		}
 	}
 
@@ -204,18 +202,15 @@ public class Scenery extends JPanel {
 	// uses graphics2D to draw a line - since Graphics doesn't have this. It takes
 	// the width of the line, end points, and color
 	private void drawLine(Graphics2D g2d, int width, int x1, int y1, int x2, int y2, Color color) {
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); // smooth diagonal
-																									// lines
-		g2d.setStroke(new BasicStroke(width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER)); // thickness 20, rect like
-																								// edges, chained lines
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); // smooth diagonal lines
+		g2d.setStroke(new BasicStroke(width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER)); // thickness set to width, rect like edges, chained lines
 		g2d.setColor(color); // set color
 		g2d.drawLine(x1, y1, x2, y2); // draw the line
 	}
 
 	// writes text (using graphics2d), given location, text, font/size, and color
 	private void writeText(Graphics2D g2d, int x, int y, String text, String fontName, int fontSize, Color color) {
-		g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON); // smooth
-																											// text
+		g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON); // smooth text
 		g2d.setFont(new Font(fontName, Font.BOLD, fontSize));
 		g2d.setColor(color);
 		g2d.drawString(text, x, y);
@@ -250,7 +245,7 @@ public class Scenery extends JPanel {
 		drawOval(g, (int) (x + (47 * scale)), (int) (y + (50 * scale)), (int) (57 * scale), (int) (57 * scale), crown);
 	}
 
-	// draws a tree given position, colors, and scale
+	// draws a winter tree given position and trunk color
 	private void drawWinterTree(Graphics g, int x, int y, Color trunk) {
 		// trunk
 		drawRect(g, x + 42, y + 100, 21, 100, trunk);
@@ -376,7 +371,7 @@ public class Scenery extends JPanel {
 		drawOval(g, (int) (x + (25 * scale)), (int) (y + (10 * scale)), (int) (5 * scale), (int) (30 * scale), black);
 		// left orange wing
 		drawOval(g, x, y, (int) (25 * scale), (int) (25 * scale), new Color(255, 150, 40));
-		// right orange wind
+		// right orange wing
 		drawOval(g, (int) (x + (30 * scale)), y, (int) (25 * scale), (int) (25 * scale), new Color(255, 150, 40));
 		// left yellow wing
 		drawOval(g, (int) (x + (8 * scale)), (int) (y + (23 * scale)), (int) (17 * scale), (int) (17 * scale),
@@ -455,7 +450,7 @@ public class Scenery extends JPanel {
 		drawOval(g, x + 60, y + 14, 30, 30, squirrel);
 		// eye
 		drawOval(g, x + 78, y + 21, 6, 6, black);
-		// head top thingy
+		// triangle on top of head
 		drawTriangle(g, x + 65, y + 22, x + 81, y + 19, x + 70, y + 4, squirrel);
 	}
 
