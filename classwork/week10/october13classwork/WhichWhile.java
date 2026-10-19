@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class WhichWhile{
     public static void main(String[] args){
+        //this is while loop, not do while
         Scanner sc = new Scanner(System.in);
         double num = 0;
         while (num <= 5){
