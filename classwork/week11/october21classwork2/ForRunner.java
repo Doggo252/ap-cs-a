@@ -14,15 +14,16 @@ public class ForRunner {
             System.out.print(i + ", ");
         }
 
-        //do while loop 1-25 inclusive
+        //do while loop sum of 1-25 inclusive
         System.out.print("\b\b  \nDo while loop 1: ");
 
         int i = 1;
+        int sum = 0;
         do {
-            System.out.print(i + ", ");
+            sum += i;
             i++;
         } while (i <= 25);
-        System.out.println("\b\b  ");
+        System.out.println("\nThe sum is " + sum);
 
     }
 }
