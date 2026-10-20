@@ -21,5 +21,6 @@ public class Runner{
         System.out.print("Enter the y value of the second point (integer): ");
         int y2 = sc.nextInt();
         mt.slope(x1, y1, x2, y2);
+        sc.close();
     }
 }
