@@ -7,16 +7,13 @@ public class Runner {
         JFrame frame = new JFrame("");
 
         //Create the JPanel object and add it to the frame
-         AnimateScreen canvas = new AnimateScreen();
+        AnimateScreen canvas = new AnimateScreen();
 
         
         frame.add(canvas);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-
-       
-
-        
+        canvas.animate();
     }
 }
