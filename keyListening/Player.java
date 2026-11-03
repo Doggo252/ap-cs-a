@@ -2,14 +2,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Player{
-
-	// location of the player and colors
+	//location of the player and colors
 	private int x, y;
 	private Color orange;
 	private Color green;
 
 	public Player(int x, int y){
-		// set up instance variables
+		//set up instance variables
 		this.x = x;
 		this.y = y;
 		orange = new Color(255, 165, 0);
@@ -17,7 +16,7 @@ public class Player{
 		
 	}
 	
-	// draw the player
+	//draw the player
 	public void draw(Graphics g) {
 		g.setColor(orange);
 		g.fillOval(x, y, 50, 50);
@@ -25,5 +24,3 @@ public class Player{
 		g.fillRect(x-5, y+50, 60, 70);
 	}
 }
-	
-	
