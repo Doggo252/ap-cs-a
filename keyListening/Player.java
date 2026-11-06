@@ -17,10 +17,38 @@ public class Player{
 	}
 	
 	//draw the player
-	public void draw(Graphics g) {
+	public void draw(Graphics g){
 		g.setColor(orange);
 		g.fillOval(x, y, 50, 50);
 		g.setColor(green);
 		g.fillRect(x-5, y+50, 60, 70);
+	}
+
+	//move the player to the right
+	public void moveRight(){
+		if (x<735){
+			x += 10;
+		}
+	}
+
+	//move the player to the left
+	public void moveLeft(){
+		if (x > 0){
+			x -= 10;
+		}
+	}
+
+	//move the player up
+	public void moveUp(){
+		if (y>0){
+			y -= 10;
+		}
+	}
+
+	//move the player down
+	public void moveDown(){
+		if (y < 480){
+			y += 10;
+		}
 	}
 }

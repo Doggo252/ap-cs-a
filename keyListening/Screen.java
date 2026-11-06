@@ -16,6 +16,7 @@ public class Screen extends JPanel implements KeyListener {
 	public Screen(){
 		setFocusable(true); 
 		setLayout(null);
+		addKeyListener(this);
 
 		//instantiate the player and color
 		player = new Player(700, 300);
@@ -44,12 +45,27 @@ public class Screen extends JPanel implements KeyListener {
 		g.fillRect(0, 0, 800, 600);
 	}
 	
+	@Override
 	public void keyPressed(KeyEvent e){
-		
+		if (e.getKeyCode() == 38){
+			player.moveUp();
+		}
+		if (e.getKeyCode() == 40){
+			player.moveDown();
+		}
+		if (e.getKeyCode() == 37){
+			player.moveLeft();
+		}
+		if (e.getKeyCode() == 39){
+			player.moveRight();
+		}
+		super.repaint();
 	}
 
 	//you must have method signatures for all methods that are part of an interface
+	@Override
 	public void keyReleased(KeyEvent e){}
+	@Override
 	public void keyTyped(KeyEvent e){}
 }
 

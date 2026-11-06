@@ -8,7 +8,9 @@ import java.awt.event.KeyEvent;
 
 public class Screen extends JPanel implements KeyListener {
 	// instance variables
-        
+    SlotMachine sm;
+    boolean spinning;
+    long endTime1, endTime2, endTime3;
 
 	// Initialization Constructor
 	public Screen() {
@@ -20,8 +22,8 @@ public class Screen extends JPanel implements KeyListener {
              this.addKeyListener(this);
 	    
             // instantiate/initialize objects
-            
-
+            sm = new SlotMachine(100);
+            spinning = false;
 	}
 
     //set the size of the JPanel container
@@ -30,22 +32,43 @@ public class Screen extends JPanel implements KeyListener {
 	    return new Dimension(800,600);
 	}
 	
-    // Call the draw methods
 	@Override
 	public void paintComponent(Graphics g){
 	    super.paintComponent(g);
-        // Call the draw methods
-       
-
+        sm.drawMachine(g);
+        if (spinning){
+            if (System.currentTimeMillis() < endTime1){
+                sm.animate(1);
+                repaint();
+            }
+            else if (System.currentTimeMillis() < endTime2){
+                sm.animate(2);
+                repaint();
+            }
+            else if (System.currentTimeMillis() < endTime3){
+                sm.animate(3);
+                repaint();
+            }
+            else{
+                sm.play();
+                repaint();
+                spinning = false;
+            }
+        }
 	}
 
     @Override
     public void keyPressed(KeyEvent e) {
-        // Triggers spin when spacebar is pressed
-        if (e.getKeyCode() == 32) {   // or whatever key you want to use for your spin key
-            
-            }
+        if (e.getKeyCode() == 32) {
+            //animation for rolls
+            long startTime = System.currentTimeMillis();
+            endTime1 = startTime + 300;
+            endTime2 = startTime + 1000;
+            endTime3 = startTime + 1800;
+            spinning = true;
+            repaint();
         }
+    }
     
 
     // Required KeyListener interface methods
