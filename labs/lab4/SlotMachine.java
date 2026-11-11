@@ -12,6 +12,7 @@ public class SlotMachine {
 	private int num1, num2, num3, displayNum1, displayNum2, displayNum3, winnings, balance;
 	private Font fontPayout, fontPayout2, fontNumbers, fontEnd;
 	private Color yellow, green, gold, text, red;
+	private boolean spinning;
 
 	// constructor
 	public SlotMachine(int balance) {
@@ -29,9 +30,10 @@ public class SlotMachine {
 		num1 = 0;
 		num2 = 0;
 		num3 = 0;
-		displayNum1 = 0;
-		displayNum2 = 0;
-		displayNum3 = 0;
+		displayNum1 = (int) (Math.random() * 9) + 1;
+		displayNum2 = (int) (Math.random() * 9) + 1;
+		displayNum3 = (int) (Math.random() * 9) + 1;
+		spinning = false;
 	}
 
 	// draw the payout table
@@ -48,7 +50,7 @@ public class SlotMachine {
 	}
 
 	// draw the machine
-	public void drawMachine(Graphics g, boolean spinning) {
+	public void drawMachine(Graphics g) {
 		// draw the background
 		g.setColor(green);
 		g.fillRect(0, 0, 800, 600);
@@ -128,18 +130,22 @@ public class SlotMachine {
 	// rolling animation
 	public void animate(int stage) {
 		if (stage == 1) {
+			spinning = true;
 			displayNum1 = (int) (Math.random() * 9) + 1;
 			displayNum2 = (int) (Math.random() * 9) + 1;
 			displayNum3 = (int) (Math.random() * 9) + 1;
 		} else if (stage == 2) {
+			spinning = true;
 			displayNum1 = num1;
 			displayNum2 = (int) (Math.random() * 9) + 1;
 			displayNum3 = (int) (Math.random() * 9) + 1;
 		} else if (stage == 3) {
+			spinning = true;
 			displayNum1 = num1;
 			displayNum2 = num2;
 			displayNum3 = (int) (Math.random() * 9) + 1;
 		} else if (stage == 4) {
+			spinning = false;
 			displayNum1 = num1;
 			displayNum2 = num2;
 			displayNum3 = num3;

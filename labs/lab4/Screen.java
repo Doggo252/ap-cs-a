@@ -9,9 +9,9 @@ import java.awt.event.KeyEvent;
 
 public class Screen extends JPanel implements KeyListener {
     // instance variables
-    SlotMachine slotMachineObj;
-    boolean spinning;
-    long endTime1, endTime2, endTime3;
+    private SlotMachine slotMachineObj;
+    private boolean spinning;
+    private long endTime1, endTime2, endTime3;
 
     // initialization constructor
     public Screen() {
@@ -37,7 +37,7 @@ public class Screen extends JPanel implements KeyListener {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        slotMachineObj.drawMachine(g, spinning);
+        slotMachineObj.drawMachine(g);
     }
 
     // do things when keys are pressed
